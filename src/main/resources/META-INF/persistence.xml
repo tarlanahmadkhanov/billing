@@ -1,0 +1,22 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="billing_pu">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>az.tarlan.billing.jpa.models.TransactionCheck</class>
+        <class>az.tarlan.billing.jpa.models.TransactionPay</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/billing"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="tarlan"/>
+            <property name="javax.persistence.jdbc.password" value="Ab123456"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="drop-and-create"/>
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

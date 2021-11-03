@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="billing" class="az.tarlan.billing.core.Billing">
+        <constructor-arg ref="limit"/>
+        <constructor-arg ref="service_adapter"/>
+        <constructor-arg ref="billing_repository"/>
+    </bean>
+
+    <bean id="limit" class="az.tarlan.billing.core.Limit"/>
+
+    <bean id="service_adapter" class="az.tarlan.billing.core.ServiceAdapter"/>
+
+    <bean id="billing_repository" class="az.tarlan.billing.jpa.BillingRepository"
+          destroy-method="close"/>
+
+</beans>
